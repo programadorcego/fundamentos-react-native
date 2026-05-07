@@ -8,7 +8,7 @@ export function Home() {
       <Text style={styles.text}>Outro texto</Text>
 
       <Image
-        source={require("../../assets/logo.png")}
+        source={require("@/assets/logo.png")}
         style={{width: 64, height: 64}}
         accessibilityLabel="Descrição da Logo"
       />
