@@ -1,4 +1,4 @@
-import { Button, Text, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
 import { styles } from "./styles";
 import { useState } from "react";
 
@@ -13,11 +13,17 @@ export function Home() {
     <View style={styles.mainContainer}>
       <Text>Contador: {count}</Text>
 
-      <Button
-      title="Aumentar"
-      onPress={handleIncrease}
-      accessibilityLabel="Clique para aumentar o contador"
-      />
+      <Pressable
+        style={({ pressed }) => [
+          styles.button,
+          pressed && styles.buttonPressed
+        ]}
+        onPress={handleIncrease}
+        accessibilityRole="button"
+        accessibilityLabel="Clique para aumentar o contador"
+      >
+        <Text style={styles.buttonText}>Aumentar</Text>
+      </Pressable>
     </View>
   );
 }
