@@ -1,22 +1,22 @@
-import { Image, Text, View } from "react-native";
+import { Button, Text, View } from "react-native";
 import { styles } from "./styles";
+import { useState } from "react";
 
 export function Home() {
+  const [count, setCount] = useState(0);
+
+  function handleIncrease() {
+    setCount(prev => prev + 1);
+  }
+
   return (
     <View style={styles.mainContainer}>
-      <Text style={{color: "blue", fontSize: 40}}>Meu texto</Text>
-      <Text style={styles.text}>Outro texto</Text>
+      <Text>Contador: {count}</Text>
 
-      <Image
-        source={require("@/assets/logo.png")}
-        style={{width: 64, height: 64}}
-        accessibilityLabel="Descrição da Logo"
-      />
-
-      <Image
-        source={{ uri: "https://reactnative.dev/img/tiny_logo.png" }}
-        style={{width: 64, height: 64}}
-        accessibilityLabel="Descrição da Logo"
+      <Button
+      title="Aumentar"
+      onPress={handleIncrease}
+      accessibilityLabel="Clique para aumentar o contador"
       />
     </View>
   );
