@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
 
-  scrollContainer: {
+  flatContainer: {
     paddingVertical: 100,
   }
 });

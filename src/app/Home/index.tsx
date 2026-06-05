@@ -1,4 +1,4 @@
-import { ScrollView, Text, View } from "react-native";
+import { FlatList, Text, View } from "react-native";
 import { styles } from "./styles";
 
 export function Home() {
@@ -11,11 +11,12 @@ export function Home() {
 
   return (
     <View style={styles.mainContainer}>
-      <ScrollView contentContainerStyle={styles.scrollContainer}>
-        {items.map(item => (
-          <Text key={item.id}>{item.text}</Text>
-        ))}
-      </ScrollView>
+      <FlatList
+        data={items}
+        renderItem={({ item }) => <Text>{item.text}</Text>}
+        keyExtractor={item => item.id.toString()}
+        contentContainerStyle={styles.flatContainer}
+      />
     </View>
   );
 }
