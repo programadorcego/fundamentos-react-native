@@ -7,6 +7,10 @@ export const styles = StyleSheet.create({
   },
 
   mainContainer: {
-    backgroundColor: "red"
+    flex: 1,
   },
+
+  scrollContainer: {
+    paddingVertical: 100,
+  }
 });
